@@ -1,0 +1,125 @@
+/* For all items that should be centered */
+.centered{
+    text-align: center;
+}
+
+/* Background image */
+body {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+
+.highlight{
+    font-family: "Poppins", sans-serif;
+    font-size:45px;
+    letter-spacing: 2px;
+    padding: 05px;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%
+        aqua 50%
+    );
+}
+
+/* Map border */
+#map {
+    width: 93vw;
+    height: 45vh; 
+    margin: 3vw;
+    border: 0px solid black;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 15px;
+}
+/* Input box with scroll bar */
+#inputBox {
+    margin: 2vw;
+    padding: 5px;
+    border: 0px solid black;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 15px;
+    height: 20vh;
+    overflow: scroll;
+}
+/* Table styling */
+table, td, th 
+{
+    border: 1px solid black;
+    text-align: center;
+}
+table 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+tr 
+{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+th
+{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+td 
+{  
+    text-align: center;
+}
+
+/* when hover over will highlight background */
+p:hover 
+{
+    background-color: rgb(215, 219, 219);
+}
+
+p
+{
+    height: 20px;
+}
+
+.viewButton 
+{
+    padding-left: 500px;
+}
+
+
+h4
+{
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(220, 228, 226);
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    border-radius: 15px;
+}
+
+h2
+{
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(220, 228, 226);
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 15px;
+}
+
+h3
+{
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(220, 228, 226);
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 15px;
+}
+
+h6
+{
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(162, 221, 255);
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 15px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!------------------------------------------------------------------
+- Authors:  1. Lim Zhe Yi 
+-           2. Tan Jun Yu
+-           3. Goh Chyi Yong
+-           4. Hashveenderjeet Kaur 
+- University: Monash University Malaysia
+- Degree: E3001 Bachelor of Engineering (Honours)  
+- Last modified: 21 May 2021
+- Purpuse: Add POI page which allows user to add any desired POI to the vacation and
+-          the total distance will be calculated alongside with the map with the route
+------------------------------------------------------------------>
+
+<html>
+
+<head>
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking the favicon with this HTML-->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Linking the main.css with this HTML -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Title Of the page -->
+    <title>Getaway Bloom</title>
+
+    <!---Mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!---Link between HTML and js file-->
+    <script src="js/config.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/shared.js"></script>
+</head>
+
+
+<body>
+    <!-- Header of page which contains name and logo of app -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout-icon"></div>
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title"></span>
+                <img id="headerIcon" src="img/favicon.png" width="50" height="45">
+                <b> Getaway Bloom </b>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer on the top left of the page -->
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout__title"><img id="headerIcon" src="img/favicon.png"><b>Getaway Bloom</b></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="mainpage.html" onclick="mainpage()">Home Page</a>
+                <a class="mdl-navigation__link" href="listofplannedvacations.html"
+                    onclick="listOfPlannedVacations()">List of planned vacation</a>
+            </nav>
+        </div>
+
+        <!-- Page Content -->
+        <br>
+        <div class="centered">
+            <div>
+                <h4><b>
+                        <!-- Add POI input -->
+                        <label for="addressPOI">Add Point of Interest (POI):</label>
+                        <input type="text" id="addressPOI" onfocus="this.value=''">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                            onclick="confirmPOI()">Add</button>
+
+                        <!-- Choose Category for POI input -->
+                        <label for="category">Choose a category : </label>
+                        <select id="category" onchange="showPOI()">
+                            <option value=""> </option>
+                            <option value="attraction"> Tourist attractions</option>
+                            <option value="lodging">Accommodations</option>
+                            <option value="food">Restaurants</option>
+                            <option value="gas station">Gas stations</option>
+                        </select>
+                        <!-- Recenter button -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                            onclick="reCenter()">Re-center</button>
+                </h4></b>
+            </div>
+        </div>
+        <!-- Map -->
+        <div class="centered">
+            <div id="map"></div>
+        </div>
+
+        <div class="centered">
+            <!-- Input box for List Of POIs added and List of nearest POIs -->
+            <div id="inputBox">
+                <h4>Distance results may be inconsistent due to webservice call</h4>
+                <h4><b>List of POIs added :</b>
+                    <span>
+                        <div id="displayPOI"></div>
+                    </span>
+                </h4>
+                <h4><b>List of Nearest POIs:</b>
+                    <div id="displayNearestPOI"></div>
+                </h4>
+            </div>
+            <!-- Next button to navigate to summary page -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                onclick="next()">Next</button>
+        </div>
+    </div>
+
+    <!-- Linking js files to this HTML -->
+    <script src="js/addPoi.js"></script>
+
+</body>
+
+
+</html>
